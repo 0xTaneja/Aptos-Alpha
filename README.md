@@ -8,7 +8,7 @@ Built for **CTRL+MOVE Hackathon** - *Build the Future of DeFi on Aptos*
 
 ## 🎯 **Project Overview**
 
-Aptos Alpha Bot is a production-ready, multi-user trading bot that brings sophisticated DeFi trading strategies to the Aptos blockchain. Originally built for Hyperliquid, this project has been completely migrated to leverage Aptos's unique capabilities.
+Aptos Alpha Bot is a production-ready, multi-user trading bot that brings sophisticated DeFi trading strategies to the Aptos blockchain.
 
 ### **🏆 Hackathon Category Alignment**
 
