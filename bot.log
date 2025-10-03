@@ -1,0 +1,353 @@
+2025-10-03 17:40:02,147 - __main__ - INFO - AptosAlphaBot initialized with trading DISABLED
+2025-10-03 17:40:02,148 - __main__ - INFO - 🚀 Starting Aptos Alpha Trading Bot (TRADING DISABLED)...
+2025-10-03 17:40:02,148 - __main__ - INFO - 🔧 Initializing AptosAlphaBot components...
+2025-10-03 17:40:02,148 - __main__ - INFO - 📚 Initializing Aptos database...
+2025-10-03 17:40:02,156 - database - INFO - ✅ Aptos Alpha Bot database initialized: aptos_alpha_bot.db
+2025-10-03 17:40:02,157 - __main__ - INFO - ✅ Aptos database initialized and tested
+2025-10-03 17:40:02,158 - __main__ - INFO - 🌐 Initializing Aptos authentication and clients...
+2025-10-03 17:40:02,158 - aptos_auth - INFO - Initialized Aptos Auth for testnet network
+2025-10-03 17:40:02,158 - aptos_auth - INFO - Attempting to connect to testnet. Attempt 1/3
+2025-10-03 17:40:02,158 - aptos_auth - INFO - Main config found at /root/aptos/aptos-trading-bot/config.json. Attempting main connection
+It is recommended that private keys are AIP-80 compliant (https://github.com/aptos-foundation/AIPs/blob/main/aips/aip-80.md).
+2025-10-03 17:40:02,358 - aptos.api - INFO - Initialized Aptos API with node: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:02,359 - aptos.info - INFO - Initialized Aptos Info (Hyperion Oracle: True)
+2025-10-03 17:40:02,393 - aptos.api - INFO - Initialized Aptos API with node: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:02,433 - aptos.api - INFO - Initialized Aptos API with node: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:02,433 - aptos.info - INFO - Initialized Aptos Info (Hyperion Oracle: True)
+2025-10-03 17:40:02,433 - aptos.exchange - INFO - Initialized Aptos Exchange for account: 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca
+2025-10-03 17:40:03,232 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1 "HTTP/2 200 OK"
+2025-10-03 17:40:03,411 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:40:03,664 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:40:04,555 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:40:04,556 - aptos_auth - INFO - Account balance: 20.30264400 APT
+2025-10-03 17:40:04,556 - aptos_auth - INFO - Main config connection successful for 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca
+2025-10-03 17:40:04,556 - aptos_auth - INFO - Successfully connected with main config 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca on testnet
+2025-10-03 17:40:04,557 - __main__ - INFO - ✅ Aptos authentication successful: 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca
+2025-10-03 17:40:04,577 - __main__ - INFO - ✅ Aptos REST client initialized: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:05,145 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:40:05,368 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:40:05,864 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:40:05,864 - __main__ - INFO - ✅ Account balance: 20.30264400 APT
+2025-10-03 17:40:05,885 - aptos.api - INFO - Initialized Aptos API with node: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:05,904 - aptos.api - INFO - Initialized Aptos API with node: https://fullnode.testnet.aptoslabs.com/v1
+2025-10-03 17:40:05,905 - aptos.info - INFO - Initialized Aptos Info (Hyperion Oracle: True)
+2025-10-03 17:40:05,905 - aptos.exchange - INFO - Initialized Aptos Exchange for account: 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca
+2025-10-03 17:40:05,905 - aptos.exchange - INFO - ✅ Panora DEX Aggregator ENABLED for best price routing
+2025-10-03 17:40:05,905 - __main__ - INFO - ✅ Aptos Exchange reinitialized with sponsor integrations (Panora enabled)
+2025-10-03 17:40:05,905 - __main__ - INFO - 🚀 Initializing sponsor perpetuals integrations...
+2025-10-03 17:40:05,905 - integrations.merkle_perps - INFO - Initialized Merkle Perpetuals integration
+2025-10-03 17:40:05,905 - __main__ - INFO - ✅ Merkle Trade perpetuals initialized (up to 100x leverage)
+2025-10-03 17:40:05,905 - integrations.kana_futures - INFO - Initialized Kana Labs Futures integration
+2025-10-03 17:40:05,905 - __main__ - INFO - ✅ Kana Labs futures initialized (up to 50x leverage)
+2025-10-03 17:40:05,905 - __main__ - INFO - 🤖 Initializing Telegram bot...
+2025-10-03 17:40:05,905 - telegram_bot.perpetuals_commands - INFO - Initialized Perpetuals Commands
+2025-10-03 17:40:05,905 - __main__ - INFO - ✅ Perpetuals commands initialized
+2025-10-03 17:40:06,202 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca "HTTP/2 200 OK"
+2025-10-03 17:40:06,211 - trading_engine.vault_manager - INFO - Aptos vault manager initialized for 0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca
+2025-10-03 17:40:06,212 - __main__ - INFO - ✅ VaultManager initialized
+2025-10-03 17:40:06,213 - strategies.grid_trading_engine - INFO - GridTradingEngine initialized with real Aptos SDK
+2025-10-03 17:40:06,214 - __main__ - INFO - ✅ GridTradingEngine initialized
+2025-10-03 17:40:06,215 - __main__ - INFO - ✅ TradingAnalytics initialized
+2025-10-03 17:40:06,216 - strategies.strategy_manager - INFO - Initializing AptosStrategyManager
+2025-10-03 17:40:06,217 - strategies.strategy_manager - ERROR - Error loading strategies: cannot import name 'AutomatedTradingEngine' from 'strategies.automated_trading' (/root/aptos/aptos-trading-bot/strategies/automated_trading.py)
+2025-10-03 17:40:06,217 - strategies.strategy_manager - ERROR - Failed to load fallback strategy: cannot import name 'AutomatedTradingEngine' from 'strategies.automated_trading' (/root/aptos/aptos-trading-bot/strategies/automated_trading.py)
+2025-10-03 17:40:06,218 - __main__ - INFO - ✅ AptosStrategyManager initialized
+2025-10-03 17:40:06,219 - strategies.automated_trading - INFO - AutomatedTrading initialized with real Aptos SDK
+2025-10-03 17:40:06,222 - __main__ - ERROR - Trading engines init failed: RealPremiumCommands.__init__() got an unexpected keyword argument 'account'
+Traceback (most recent call last):
+  File "/root/aptos/aptos-trading-bot/main.py", line 264, in initialize_components
+    self.premium_strategy = RealPremiumCommands(
+                            ^^^^^^^^^^^^^^^^^^^^
+TypeError: RealPremiumCommands.__init__() got an unexpected keyword argument 'account'
+2025-10-03 17:40:06,823 - telegram_bot.aptos_bot - INFO - 📊 Registering perpetuals trading commands...
+2025-10-03 17:40:06,826 - telegram_bot.aptos_bot - INFO - ✅ Perpetuals commands registered
+2025-10-03 17:40:06,828 - telegram_bot.aptos_bot - INFO - ✅ All handlers registered
+2025-10-03 17:40:06,830 - telegram_bot.aptos_bot - INFO - ✅ Aptos Telegram Trading Bot initialized
+2025-10-03 17:40:06,831 - telegram_bot.aptos_bot - INFO - ✅ Perpetuals commands ready
+2025-10-03 17:40:06,832 - __main__ - INFO - ✅ Telegram bot initialized with all dependencies
+2025-10-03 17:40:06,833 - __main__ - INFO - 🎯 SPONSOR INTEGRATIONS ACTIVE: Panora DEX Aggregator, Merkle Trade Perpetuals, Kana Labs Futures
+2025-10-03 17:40:07,018 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:40:07,235 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:40:07,775 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:40:07,776 - __main__ - INFO - 🏥 Health check: 3/4 components healthy
+2025-10-03 17:40:07,776 - __main__ - WARNING - ⚠️ Unhealthy components: rest_client
+2025-10-03 17:40:07,776 - __main__ - INFO - 🚀 All components initialized successfully!
+2025-10-03 17:40:07,776 - __main__ - INFO - ⚡ Initializing background tasks...
+2025-10-03 17:40:07,776 - __main__ - INFO - 🏥 Basic system health monitoring started
+2025-10-03 17:40:07,777 - __main__ - INFO - 📊 Basic system monitoring enabled
+2025-10-03 17:40:07,777 - __main__ - INFO - ✅ System monitoring initialized, ALL TRADING DISABLED
+2025-10-03 17:40:07,777 - __main__ - INFO - 🤖 Trading is DISABLED - use Telegram commands to start trading when ready
+2025-10-03 17:40:07,777 - __main__ - INFO - 🤖 Starting Telegram bot polling...
+2025-10-03 17:40:07,953 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:40:08,185 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:40:08,327 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getMe "HTTP/1.1 200 OK"
+2025-10-03 17:40:08,329 - telegram.ext.Application - INFO - Application started
+2025-10-03 17:40:08,488 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/deleteWebhook "HTTP/1.1 200 OK"
+2025-10-03 17:40:08,490 - __main__ - INFO - 🤖 Telegram bot started and polling
+2025-10-03 17:40:08,490 - __main__ - INFO - ✅ Aptos Alpha Bot main components started. Telegram bot polling in background.
+2025-10-03 17:40:08,621 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:40:08,622 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 17:40:19,027 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:40:29,187 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:40:39,340 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:40:46,496 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:40:48,268 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/sendMessage "HTTP/1.1 200 OK"
+2025-10-03 17:40:49,587 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:40:49,928 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:40:50,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:40:59,746 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:09,900 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:20,066 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:30,220 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:31,587 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:32,358 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:41:32,890 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:41:37,179 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:37,526 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:41:37,527 - telegram_bot.aptos_bot - ERROR - Error loading prices: 'AptosInfo' object has no attribute 'get_token_price'
+2025-10-03 17:41:37,883 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:41:47,337 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:52,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:41:54,655 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/sendMessage "HTTP/1.1 200 OK"
+2025-10-03 17:42:00,154 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:00,920 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:42:01,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:42:03,815 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:04,277 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/sendMessage "HTTP/1.1 200 OK"
+2025-10-03 17:42:05,643 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:05,966 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:42:06,311 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:42:11,060 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:11,408 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-10-03 17:42:11,409 - telegram_bot.aptos_bot - ERROR - Error loading prices: 'AptosInfo' object has no attribute 'get_token_price'
+2025-10-03 17:42:11,771 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/editMessageText "HTTP/1.1 200 OK"
+2025-10-03 17:42:21,220 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:31,375 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:41,528 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:42:51,682 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:01,841 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:11,996 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:22,156 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:32,310 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:42,471 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:43:52,625 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:02,782 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:12,937 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:23,100 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:33,254 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:43,415 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:44:53,597 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:03,786 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:09,203 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:45:09,783 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:45:10,683 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:45:10,696 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 17:45:13,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:24,129 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:34,288 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:44,451 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:45:54,603 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:04,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:14,915 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:25,067 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:35,223 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:45,396 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:46:55,547 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:05,702 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:15,885 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:26,037 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:36,200 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:46,356 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:47:56,522 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:06,675 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:16,840 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:26,998 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:37,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:47,315 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:48:57,470 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:07,640 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:17,819 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:27,972 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:38,128 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:48,299 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:49:58,500 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:08,656 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:12,552 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:50:12,756 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:50:14,040 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:50:14,045 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 17:50:18,810 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:28,976 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:39,127 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:49,287 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:50:59,443 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:51:09,602 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:51:19,756 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:51:29,909 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:51:40,063 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:51:50,216 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:00,368 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:10,522 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:20,683 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:30,837 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:40,998 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:52:51,172 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:01,327 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:11,481 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:21,634 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:31,789 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:41,941 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:53:52,094 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:02,251 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:12,402 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:22,552 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:32,703 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:42,856 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:54:53,010 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:03,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:13,314 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:15,535 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 17:55:15,741 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 17:55:16,165 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 17:55:16,167 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 17:55:23,474 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:33,626 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:43,778 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:55:53,931 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:04,088 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:14,266 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:25,838 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:36,000 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:46,159 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:56:56,321 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:06,483 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:16,655 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:26,814 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:36,977 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:47,135 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:57:57,304 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:07,466 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:17,637 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:27,804 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:37,982 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:48,203 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:58:58,368 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:08,531 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:18,698 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:28,885 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:39,062 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:49,222 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 17:59:59,381 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:00:09,538 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:00:16,991 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 18:00:17,607 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 18:00:18,611 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 18:00:18,614 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 18:00:19,695 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:00:29,859 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:00:40,018 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:00:50,224 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:00,417 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:10,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:20,756 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:30,943 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:41,103 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:01:51,262 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:01,418 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:11,577 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:22,125 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:32,289 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:42,448 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:02:52,619 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:02,780 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:12,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:23,105 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:33,271 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:43,449 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:03:53,616 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:03,781 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:13,966 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:24,132 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:34,306 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:44,463 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:04:54,629 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:04,786 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:14,944 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:19,543 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 18:05:19,727 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 18:05:20,803 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 18:05:20,804 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 18:05:25,104 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:35,261 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:45,425 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:05:55,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:05,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:15,930 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:26,089 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:36,415 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:46,580 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:06:56,741 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:06,898 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:17,058 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:27,222 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:37,386 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:47,544 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:07:57,707 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:07,876 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:18,035 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:28,191 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:38,363 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:48,524 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:08:58,683 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:08,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:19,009 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:29,197 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:39,357 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:49,520 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:09:59,680 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:10:09,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:10:20,003 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:10:22,451 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 18:10:23,048 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 18:10:23,483 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 18:10:23,484 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 18:10:30,163 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:10:40,326 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:10:50,486 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:00,646 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:10,805 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:20,967 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:31,137 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:41,672 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:11:51,831 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:01,989 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:12,157 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:22,314 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:32,471 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:42,631 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:12:52,788 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:02,954 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:13,121 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:24,688 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:34,850 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:45,009 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:13:55,170 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:05,330 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:15,492 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:25,660 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:35,826 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:45,997 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:14:56,155 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:06,317 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:16,476 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:24,093 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resource/0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E "HTTP/2 404 Not Found"
+2025-10-03 18:15:24,320 - httpx - INFO - HTTP Request: GET https://fullnode.testnet.aptoslabs.com/v1/accounts/0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca/resources "HTTP/2 200 OK"
+2025-10-03 18:15:25,160 - aptos.info - INFO - Found balance via Indexer API: 20.30264400 APT
+2025-10-03 18:15:25,160 - __main__ - INFO - System health: Aptos connection OK, balance: 20.30264400 APT
+2025-10-03 18:15:26,635 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:36,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:46,959 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:15:57,127 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:16:07,284 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:16:17,461 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"
+2025-10-03 18:16:27,621 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0/getUpdates "HTTP/1.1 200 OK"

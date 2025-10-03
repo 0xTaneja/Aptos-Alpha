@@ -1,0 +1,188 @@
+{
+  "general": {
+    "environment": "testnet",
+    "node_url": "https://fullnode.testnet.aptoslabs.com/v1",
+    "faucet_url": "https://faucet.testnet.aptoslabs.com",
+    "log_level": "INFO",
+    "data_directory": "data",
+    "backup_interval_hours": 24
+  },
+  "telegram_bot": {
+    "bot_token": "",
+    "bot_username": "",
+    "allowed_users": [],
+    "admin_users": [],
+    "disable_suspicious_commands": true,
+    "max_message_length": 4096,
+    "command_cooldown_seconds": 3,
+    "welcome_message": "Welcome to the Aptos Alpha Trading Bot! Use /agent to get started."
+  },
+  "aptos_wallet": {
+    "min_funding_amount": 1.0,
+    "recommended_funding_amount": 10.0,
+    "fund_notification_threshold": 0.01,
+    "creation_timeout_seconds": 60,
+    "wallet_name_prefix": "aptos_agent_",
+    "allow_direct_wallet_connection": false,
+    "default_gas_unit_price": 100,
+    "max_gas_amount": 10000
+  },
+  "trading": {
+    "default_slippage_bps": 50,
+    "default_order_size_apt": 5.0,
+    "min_order_size_apt": 1.0,
+    "max_order_size_apt": 100.0,
+    "default_leverage": 1.0,
+    "max_leverage": 3.0,
+    "grid_levels": 10,
+    "grid_spacing_bps": 50,
+    "dex_contracts": {
+      "pancakeswap": "0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12",
+      "thala": "0x48271d39d0b05bd6efca2278f22277d6fcc375504f9839fd73f74ace240861af",
+      "liquidswap": "0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12",
+      "hyperion": "0x8b4a2c4bb53857c718a04c020b98f8c2e1f99a68b0f57389a8bf5434cd22e05c"
+    },
+    "sponsor_integrations": {
+      "panora": {
+        "enabled": true,
+        "api_url": "https://api.panora.exchange",
+        "api_key": "a4^KV_EaTf4MW#ZdvgGKX#HUD^3IFEAOV_kzpIE^3BQGA8pDnrkT7JcIy#HNlLGi",
+        "use_for_price_quotes": true,
+        "use_for_swaps": true
+      },
+      "hyperion": {
+        "enabled": true,
+        "contract_mainnet": "0x8b4a2c4bb53857c718a04c020b98f8c2e1f99a68b0f57389a8bf5434cd22e05c",
+        "contract_testnet": "0x1baf51f67dac7e629f8ee85bb16f8d049ef5b6d27b7e6bad3c703f94562dffdd",
+        "use_for_swaps": true,
+        "use_for_liquidity": true
+      },
+      "ekiden": {
+        "enabled": true,
+        "api_url": "https://api.ekiden.fi",
+        "use_clob": true,
+        "supports_perpetuals": false
+      },
+      "merkle_trade": {
+        "enabled": true,
+        "api_url": "https://api.merkle.trade",
+        "supports_perpetuals": true,
+        "max_leverage": 100
+      },
+      "kana_labs": {
+        "enabled": true,
+        "api_url": "https://api.kanalabs.io/perps/v1",
+        "supports_perpetuals": true,
+        "max_leverage": 50
+      },
+      "tapp_exchange": {
+        "enabled": false,
+        "api_url": "https://api.tapp.exchange",
+        "supports_options": true
+      }
+    }
+  },
+  "risk_management": {
+    "max_daily_loss_percentage": 5.0,
+    "position_size_limit_percentage": 20.0,
+    "total_position_limit_percentage": 80.0,
+    "max_daily_trades": 50,
+    "max_open_positions": 5,
+    "min_account_balance_apt": 1.0,
+    "stop_loss_percentage": 5.0,
+    "take_profit_percentage": 10.0,
+    "enable_emergency_stop": true,
+    "max_gas_per_transaction": 10000,
+    "gas_price_multiplier": 1.2
+  },
+  "strategies": {
+    "grid_trading": {
+      "enabled": true,
+      "default_pairs": [
+        "APT/USDC",
+        "APT/USDT",
+        "USDC/USDT"
+      ],
+      "min_spread_bps": 5,
+      "max_spread_bps": 100,
+      "order_count_per_side": 5,
+      "capital_per_grid_apt": 10.0,
+      "auto_adjust_spacing": true,
+      "min_order_lifetime_seconds": 300,
+      "rebalance_interval_minutes": 60
+    },
+    "momentum": {
+      "enabled": true,
+      "lookback_periods": 3,
+      "confirmation_threshold": 2,
+      "signal_strength_threshold": 0.5,
+      "max_trade_duration_hours": 24,
+      "stop_loss_percentage": 3.0,
+      "take_profit_percentage": 6.0
+    },
+    "maker_rebate": {
+      "enabled": true,
+      "target_pairs": [
+        "APT/USDC",
+        "APT/USDT",
+        "USDC/USDT"
+      ],
+      "min_liquidity_apt": 50000,
+      "min_spread_bps": 3,
+      "max_spread_bps": 20,
+      "order_refresh_seconds": 300,
+      "max_capital_allocation_percentage": 30.0
+    }
+  },
+  "user_preferences": {
+    "default": {
+      "notifications": {
+        "trade_executed": true,
+        "position_closed": true,
+        "stop_loss_hit": true,
+        "take_profit_hit": true,
+        "funding_received": true,
+        "low_balance": true,
+        "strategy_updates": false,
+        "price_alerts": false,
+        "vault_updates": false
+      },
+      "trading_interface": {
+        "default_order_size_apt": 2.0,
+        "favorite_pairs": [
+          "APT/USDC",
+          "APT/USDT",
+          "USDC/USDT"
+        ],
+        "default_slippage_bps": 5,
+        "confirm_orders": true,
+        "show_advanced_options": false,
+        "default_timeframe": "4h",
+        "chart_indicators": [
+          "MA",
+          "RSI"
+        ]
+      },
+      "risk_settings": {
+        "max_position_size_percentage": 10.0,
+        "max_daily_loss_percentage": 3.0,
+        "auto_stop_loss": true,
+        "default_stop_loss_percentage": 5.0,
+        "default_take_profit_percentage": 10.0,
+        "disable_trading_after_loss": true
+      },
+      "strategies": {
+        "grid_trading_enabled": true,
+        "momentum_enabled": false,
+        "maker_rebate_enabled": true
+      },
+      "display": {
+        "currency": "APT",
+        "timezone": "UTC",
+        "compact_portfolio": false,
+        "show_pnl_percentage": true,
+        "show_realized_pnl": true
+      }
+    }
+  }
+}

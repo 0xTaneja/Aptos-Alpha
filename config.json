@@ -1,0 +1,17 @@
+{
+  "general": {
+    "environment": "testnet",
+    "node_url": "https://api.testnet.staging.aptoslabs.com/v1",
+    "faucet_url": "https://faucet.testnet.staging.aptoslabs.com",
+    "log_level": "INFO"
+  },
+  "aptos": {
+    "admin_private_key": "0xa69091a821b172dc8c5853458dfaebca0dd06f221c5d183de6708a604b513eaa",
+    "contract_address": "0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca",
+    "network": "testnet"
+  },
+  "telegram_bot": {
+    "bot_token": "8249227211:AAE6rijjlPaDQMDoV4q4_1TvAjCqsVzYzK0",
+    "bot_username": "AptLiqBot_bot"
+  }
+}

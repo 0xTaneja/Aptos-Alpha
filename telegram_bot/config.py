@@ -1,0 +1,327 @@
+import json
+import os
+from typing import Dict, Optional
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+class BotConfig:
+    def __init__(self, config_path: str = "config.json"):
+        self.config_path = config_path
+        self.config = self._load_config()
+        self._load_env_overrides()
+    
+    def _load_config(self) -> Dict:
+        """Load configuration from JSON file (Aptos SDK format)"""
+        try:
+            with open(self.config_path, 'r') as f:
+                config = json.load(f)
+                # Ensure we have the required Aptos SDK structure
+                return self._ensure_aptos_format(config)
+        except FileNotFoundError:
+            return self._create_aptos_config()
+    
+    def _ensure_aptos_format(self, config: Dict) -> Dict:
+        """Ensure config follows Aptos SDK format"""
+        # Start with Aptos SDK format
+        aptos_config = {
+            "account_address": config.get("account_address", ""),
+            "private_key": config.get("private_key", ""),
+            "network": config.get("network", "network")
+        }
+        
+        # Add our bot-specific extensions
+        bot_config = {
+            "vault_address": config.get("vault_address", ""),
+            "referral_code": config.get("referral_code", "APTOSBOT"),
+            "telegram": {
+                "bot_token": config.get("telegram", {}).get("bot_token", ""),
+                "allowed_users": config.get("telegram", {}).get("allowed_users", []),
+                "admin_users": config.get("telegram", {}).get("admin_users", [])
+            },
+            "database": {
+                "file": config.get("database", {}).get("file", "bot_data.json"),
+                "backup_interval": config.get("database", {}).get("backup_interval", 3600)
+            },
+            "aptos": {
+                "network": config.get("aptos", {}).get("network", "network"),
+                "node_url": config.get("aptos", {}).get("node_url", "https://fullnode.network.aptoslabs.com/v1"),
+                "faucet_url": config.get("aptos", {}).get("faucet_url", "https://faucet.testnet.aptoslabs.com")
+            },
+            "vault_system": {
+                "minimum_deposit": config.get("vault_system", {}).get("minimum_deposit", 50),
+                "performance_fee": config.get("vault_system", {}).get("performance_fee", 0.10),
+                "withdrawal_lockup_days": config.get("vault_system", {}).get("withdrawal_lockup_days", 1),
+                "strategies": config.get("vault_system", {}).get("strategies", [
+                    "aptos_staking",
+                    "grid_trading",
+                    "liquidity_mining",
+                    "arbitrage_scanning"
+                ])
+            },
+            "trading": {
+                "max_position_size": config.get("trading", {}).get("max_position_size", 10000),
+                "default_grid_spread": config.get("trading", {}).get("default_grid_spread", 0.002),
+                "profit_threshold": config.get("trading", {}).get("profit_threshold", 0.001),
+                "stop_loss_pct": config.get("trading", {}).get("stop_loss_pct", 0.01)
+            },
+            "risk_management": {
+                "max_leverage": config.get("risk_management", {}).get("max_leverage", 10),
+                "position_size_limit": config.get("risk_management", {}).get("position_size_limit", 0.1),
+                "daily_loss_limit": config.get("risk_management", {}).get("daily_loss_limit", 1000)
+            }
+        }
+        
+        # Merge Aptos format with bot extensions
+        return {**aptos_config, **bot_config}
+    
+    def _create_aptos_config(self) -> Dict:
+        """Create default configuration in Aptos SDK format"""
+        default_config = {
+            # Core Aptos SDK configuration
+            "account_address": "",
+            "private_key": "",
+            "network": "network",
+            
+            # Bot extensions
+            "vault_address": "",
+            "referral_code": "APTOSBOT",
+            "telegram": {
+                "bot_token": "",
+                "allowed_users": [],
+                "admin_users": []
+            },
+            "database": {
+                "file": "bot_data.json",
+                "backup_interval": 3600
+            },
+            "aptos": {
+                "network": "mainnet",
+                "node_url": "https://fullnode.mainnet.aptoslabs.com/v1",
+                "faucet_url": "https://faucet.testnet.aptoslabs.com"
+            },
+            "vault_system": {
+                "minimum_deposit": 50,
+                "performance_fee": 0.10,
+                "withdrawal_lockup_days": 1,
+                "strategies": [
+                    "aptos_staking",
+                    "grid_trading",
+                    "liquidity_mining",
+                    "arbitrage_scanning"
+                ]
+            },
+            "trading": {
+                "max_position_size": 10000,
+                "default_grid_spread": 0.002,
+                "profit_threshold": 0.001,
+                "stop_loss_pct": 0.01
+            },
+            "risk_management": {
+                "max_leverage": 10,
+                "position_size_limit": 0.1,
+                "daily_loss_limit": 1000
+            }
+        }
+        
+        # Save default config
+        with open(self.config_path, 'w') as f:
+            json.dump(default_config, f, indent=2)
+        
+        return default_config
+    
+    def _load_env_overrides(self):
+        """Override config with environment variables"""
+        # Aptos SDK core values
+        if os.getenv("HL_ACCOUNT_ADDRESS"):
+            self.config["account_address"] = os.getenv("HL_ACCOUNT_ADDRESS")
+        if os.getenv("HL_SECRET_KEY"):
+            self.config["private_key"] = os.getenv("HL_SECRET_KEY")
+        if os.getenv("HL_MAINNET"):
+            self.config["network"] = os.getenv("HL_MAINNET", "false").lower() == "true"
+        
+        # Bot-specific overrides
+        if os.getenv("TELEGRAM_BOT_TOKEN"):
+            self.config["telegram"]["bot_token"] = os.getenv("TELEGRAM_BOT_TOKEN")
+        if os.getenv("VAULT_ADDRESS"):
+            self.config["vault_address"] = os.getenv("VAULT_ADDRESS")
+        if os.getenv("VAULT_PRIVATE_KEY"):
+            self.config["vault_private_key"] = os.getenv("VAULT_PRIVATE_KEY")
+        if os.getenv("REFERRAL_CODE"):
+            self.config["referral_code"] = os.getenv("REFERRAL_CODE")
+        if os.getenv("DATABASE_FILE"):
+            self.config["database"]["file"] = os.getenv("DATABASE_FILE")
+    
+    # Aptos SDK compatible methods
+    def get_account_address(self) -> str:
+        """Get account address for Aptos SDK"""
+        return self.config.get("account_address", "")
+    
+    def get_private_key(self) -> str:
+        """Get private key for Aptos SDK"""
+        return self.config.get("private_key", "")
+    
+    def get_network(self) -> str:
+        """Get Aptos network"""
+        return self.config.get("network", "mainnet")
+    
+    def is_mainnet(self) -> bool:
+        """Check if using mainnet"""
+        return self.get_network() == "mainnet"
+    
+    def get_node_url(self) -> str:
+        """Get Aptos node URL based on network"""
+        if self.is_mainnet():
+            return "https://fullnode.mainnet.aptoslabs.com/v1"
+        else:
+            return "https://fullnode.testnet.aptoslabs.com/v1"
+    
+    # Bot-specific methods
+    def get_telegram_token(self) -> str:
+        """Get Telegram bot token"""
+        return self.config.get("telegram", {}).get("bot_token", "")
+    
+    def get_vault_address(self) -> str:
+        """Get vault address"""
+        return self.config.get("vault_address", "")
+    
+    def get_vault_private_key(self) -> str:
+        """Get vault private key"""
+        return self.config.get("vault_private_key", "")
+    
+    def get_referral_code(self) -> str:
+        """Get referral code"""
+        return self.config.get("referral_code", "APTOSBOT")
+    
+    def get_database_file(self) -> str:
+        """Get database file path"""
+        return self.config.get("database", {}).get("file", "bot_data.json")
+    
+    def get_minimum_deposit(self) -> float:
+        """Get minimum vault deposit"""
+        return self.config.get("vault_system", {}).get("minimum_deposit", 50)
+    
+    def get_performance_fee(self) -> float:
+        """Get vault performance fee"""
+        return self.config.get("vault_system", {}).get("performance_fee", 0.10)
+    
+    def get_trading_config(self) -> Dict:
+        """Get trading configuration"""
+        return self.config.get("trading", {})
+    
+    def get_risk_config(self) -> Dict:
+        """Get risk management configuration"""
+        return self.config.get("risk_management", {})
+    
+    def get_aptos_config(self) -> Dict:
+        """Get Aptos configuration"""
+        return self.config.get("aptos", {})
+    
+    def get_vault_strategies(self) -> list:
+        """Get enabled vault strategies"""
+        return self.config.get("vault_system", {}).get("strategies", [])
+    
+    def is_strategy_enabled(self, strategy: str) -> bool:
+        """Check if a strategy is enabled"""
+        return strategy in self.get_vault_strategies()
+    
+    def validate_aptos_config(self) -> Dict[str, bool]:
+        """Validate Aptos SDK configuration"""
+        return {
+            "account_address_set": bool(self.get_account_address()),
+            "private_key_set": bool(self.get_private_key()),
+            "network_configured": True,
+            "telegram_token_set": bool(self.get_telegram_token()),
+            "vault_address_set": bool(self.get_vault_address()),
+            "referral_code_set": bool(self.get_referral_code())
+        }
+    
+    def get_aptos_sdk_config(self) -> Dict:
+        """Get configuration in Aptos SDK format"""
+        return {
+            "account_address": self.get_account_address(),
+            "private_key": self.get_private_key(),
+            "network": self.get_network()
+        }
+    
+    def save_config(self):
+        """Save current configuration"""
+        with open(self.config_path, 'w') as f:
+            json.dump(self.config, f, indent=2)
+    
+    def get(self, key: str, default=None):
+        """Get configuration value with dot notation"""
+        keys = key.split('.')
+        value = self.config
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                return default
+        return value
+    
+    def set(self, key: str, value):
+        """Set configuration value with dot notation"""
+        keys = key.split('.')
+        config = self.config
+        for k in keys[:-1]:
+            if k not in config:
+                config[k] = {}
+            config = config[k]
+        config[keys[-1]] = value
+    
+    def generate_config_summary(self) -> str:
+        """Generate configuration summary"""
+        validation = self.validate_aptos_config()
+        
+        return f"""
+🔧 **Aptos Bot Configuration**
+
+📡 **Network Settings:**
+• Environment: {'Mainnet' if self.is_mainnet() else 'Testnet'}
+• Node URL: {self.get_node_url()}
+
+🔐 **Authentication:**
+• Account Address: {'✅ Set' if validation['account_address_set'] else '❌ Not Set'}
+• Private Key: {'✅ Set' if validation['private_key_set'] else '❌ Not Set'}
+
+🤖 **Bot Settings:**
+• Telegram Token: {'✅ Set' if validation['telegram_token_set'] else '❌ Not Set'}
+• Vault Address: {'✅ Set' if validation['vault_address_set'] else '❌ Not Set'}
+• Referral Code: {self.get_referral_code()}
+
+💰 **Vault Configuration:**
+• Minimum Deposit: ${self.get_minimum_deposit()}
+• Performance Fee: {self.get_performance_fee() * 100}%
+• Strategies: {len(self.get_vault_strategies())} enabled
+
+⚠️ **Risk Management:**
+• Max Leverage: {self.get('risk_management.max_leverage', 10)}x
+• Position Limit: {self.get('risk_management.position_size_limit', 0.1) * 100}%
+• Daily Loss Limit: ${self.get('risk_management.daily_loss_limit', 1000)}
+
+🌐 **Aptos:**
+• Network: {self.get('aptos.network', 'mainnet')}
+• Node URL: {self.get('aptos.node_url', 'https://fullnode.mainnet.aptoslabs.com/v1')}
+        """.strip()
+
+# Create global config instance
+config = BotConfig()
+
+# Convenience functions for backward compatibility
+def get_aptos_config() -> Dict:
+    """Get Aptos SDK configuration"""
+    return config.get_aptos_sdk_config()
+
+def get_telegram_token() -> str:
+    """Get Telegram token"""
+    return config.get_telegram_token()
+
+def get_vault_address() -> str:
+    """Get vault address"""
+    return config.get_vault_address()
+
+def is_mainnet() -> bool:
+    """Check if using mainnet"""
+    return config.is_mainnet()

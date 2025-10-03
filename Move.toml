@@ -1,0 +1,18 @@
+[package]
+name = "AptosAlphaBot"
+version = "1.0.0"
+authors = ["Your Name <your.email@example.com>"]
+
+[addresses]
+aptos_alpha_bot = "0x70ad456e7553006d4cea27304f6fe9c7f2bfd9881017b72bbfc4bce2562b70ca"
+std = "0x1"
+aptos_framework = "0x1"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
